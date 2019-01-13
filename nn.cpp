@@ -24,12 +24,6 @@ std::vector<double> relu(std::vector<double> x){
     return out;
 }
 
-std::vector<double> d_sigmoid(std::vector<double> x){
-    std::vector<double> out(x.size());
-    for(int i = 0; i < x.size(); i++) out[i] = (1 / (1 + exp(-x[i]))) * (1 - (1 / (1 + exp(-x[i]))));
-    return out;
-}
-
 void input_file(const std::string &filename, std::vector<double> &label, std::vector<std::vector<double> > &data){
 
     std::ifstream ifile(filename);
